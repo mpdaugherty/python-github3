@@ -38,8 +38,10 @@ class TestMilestonesService(TestCase):
             ('get', _('repos/octocat/Hello-World/milestones')))
 
     def test_LIST_with_state(self, request_method):
-        # Fail for now; I don't know how to do this test yet
-        self.ms.abc()
+        request_method.return_value = mock_response_result()
+        self.ms.list(user='octocat', repo='Hello-World', state='closed').all()
+        self.assertEqual(request_method.call_args[0],
+            ('get', _('repos/octocat/Hello-World/milestones')))
 
     def test_GET(self, request_method):
 

@@ -5,11 +5,11 @@ from pygithub3.resources.issues import Milestone
 
 class List(Request):
 
-    uri = 'issues/{user}/{repo}/milestones'
+    uri = 'repos/{user}/{repo}/milestones'
     resource = Milestone
 
 
 class Get(Request):
 
-    uri = 'issues/{user}/{repo}/milestones/{number}'
+    uri = 'repos/{user}/{repo}/milestones/{number}'
     resource = Milestone
