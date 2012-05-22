@@ -75,7 +75,7 @@ class Github(object):
         """
         :ref:`Github Orgs service <Orgs service>`
         """
-        return self._issues
+        return self._orgs
 
     @property
     def pull_requests(self):
